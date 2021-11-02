@@ -1,0 +1,214 @@
+/* pages/article/article.wxss */
+
+.wrapper {
+
+    background-color:#fbf7ed;
+  }
+.wrapper .info {
+    padding: 20rpx 30rpx
+  }
+.text-xl{
+  padding:25rpx;
+}
+
+.fl {
+    max-width: 65%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color:#999;
+    font-size:12px;
+  }
+.fr{
+  float:right;
+  color:#999;
+  font-size:12px;
+}
+.contents {
+  margin: 20rpx 30rpx;
+  padding:0 20rpx;
+  padding-bottom: 40rpx;
+  line-height: 56rpx;
+  font-size: 35rpx;
+  overflow: hidden;
+  word-wrap: break-word;
+  background-color:#fff;
+}
+.yuan{
+  font-size:13px;
+  margin-left:25rpx;
+  margin:40rpx 0;
+}
+
+/*评论**/
+.ping{
+
+  margin:30rpx 0;
+}
+.slide{
+padding:20rpx 10rpx;
+color:#999;
+background-color:#f5f5f5;
+border-top:1px solid #ccc;
+border-bottom:1px solid #ccc;
+font-size:13px;
+}
+.slideText{
+  width:100%;
+  height:80rpx;
+  text-align:center;
+  margin:30rpx 0;
+}
+textarea {
+  height:200rpx;
+  width:700rpx;
+  border:1px solid #aaa;
+  margin:20rpx 25rpx;
+}
+.listThumb {
+  width:70rpx;
+  height:70rpx;
+  display:block;
+  float:left;
+  border-radius: 50%
+
+}
+
+.listWrap {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding: 50rpx 30rpx;
+  cursor: pointer;
+  position: relative;
+}
+.listInfo {
+  height:110rpx;
+  width:540rpx;
+  display:inline-block;
+  margin-left:60rpx;
+  float:right;
+}
+.listtop{
+  margin-top:0;
+  width:570rpx;
+  font-size:12px;
+}
+.listname{
+  float:left;
+  width:180rpx;
+}
+.listKeyAdd {
+  font-size:25rpx;
+  margin-bottom:0;
+  float:right;
+}
+.listTitle {
+  width:570rpx;
+  color:#333;
+  font-size:13px;
+  margin-top:40rpx;
+  float:left;
+  
+}
+#myVideo{
+  width:680rpx;
+}
+.commtent-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:3px;
+}
+.u-name{
+  font-size:14px;
+  color:deepskyblue;
+}
+.u-time{
+  font-size:12px;
+}
+.item{
+  display: flex;
+  position: relative;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 1px;
+}
+.commtent{
+  width:100%;
+  margin-left:30rpx;
+}
+.commtent-content{
+  font-size:14px;
+}
+.cu-avatar{
+  width:30px;
+  border-radius:50%;
+}
+.info-desc{
+  padding:0 25rpx;
+}
+/* 点击评论前 */
+.comment-item{
+  width: 100%;
+  padding: 10rpx;
+  border-top:2px solid #eee;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  display: block;
+}
+.comment .mutual {
+    height:100rpx;
+}
+
+.comment .comment-form {
+  height:400rpx;
+}
+
+.comment-item .publish{
+  float:left;
+  width:35%;
+  border-radius:15px
+}
+.publish-inside{
+  line-height:28px;
+  background-color:#ccc;
+  padding : 0px 10px;
+}
+.comment-item .given{
+  float:left;
+  width:18%;
+  line-height:28px;
+  font-size:25px;
+  padding: 0;
+  font-weight: 100;
+}
+.comment-item .forward-f{
+  float:left;
+  width:40%;
+  padding : 6px 0;
+  font-weight: 100;
+  font-size: inherit;
+  width: auto;
+}
+.comment-item .forward-l{
+  float:left;
+  padding : 6px 0;
+    font-weight: 100;
+  font-size: inherit;
+  width: auto;
+
+}
+
+.none {
+  display : none
+}
+button {
+  background-color:#fff;
+}
+.fr image{
+  width:17px;
+  height:17px;
+  margin-left:5px;
+}

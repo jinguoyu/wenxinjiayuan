@@ -1,0 +1,108 @@
+<!--pages/article/article.wxml-->
+<import src="../lib/wxParse/wxParse.wxml"/>
+<!-- 审核 -->
+<view wx:if="{{sh==-1}}" class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="round">
+    梅城镇地处益阳市安化县东南部，东抵清塘镇，南与新化毗连，西接乐安镇，北界仙溪镇。镇境群山簇拥，属芙蓉山系，呈南北走向，又有咿水及其支流漳溪与梅溪穿过，山环水绕，风光旖旎。境内“梅山十景”、“梅城八景”等，前人有过刻意的描述。
+  </view>
+</view>
+<!-- 正式环境 -->
+<block wx:if="{{sh==1}}">
+<block  class="text">
+	<view class="wrapper">
+		<view class="info">
+			<view class="text-xl">
+				<text class="text-black text-bold">{{title}}</text>
+			</view>
+			<view class="info-desc cf">
+				<view class="info-desc-author fl" style="width:45%">{{addtime}}</view>
+				<view class="fr" style="width:55%">
+					<text class="info-desc-date fl" style="width:33%">评论 : {{pinglun}}</text>
+					<text class="info-desc-date fl" style="width:33%">收藏 : {{favor}}</text>
+					<text class="info-desc-date fr" style="width:33%">浏览 : {{browse}}</text>
+				</view>
+			</view>
+			<view class="info-line under-line"></view>
+		</view>
+		<!-- 增加正文视图位置  -->
+		<view class="contents">
+			<video id="myVideo" src="{{msg}}" danmu-list="{{danmuList}}" poster ="{{img}}" autoplay enable-danmu controls="true" enable-progress-gesture  show-mute-btn="true"></video>
+		</view>
+	</view>
+</block>
+<block>
+<view class="text-xl text-bold solids-bottom padding-xs">简介</view>
+<view class="padding radius">{{description}}</view>
+</block>
+
+<!--评论区-->
+<block class="ping">
+	<view class="slide">评论({{pinglun}})：</view>
+	<view wx:if="{{commtent==1}}" style="position:absolute;margin-bottom:50px;width:100%">
+		<view class="slideText">暂无评论，快来抢沙发</view>
+	</view>
+	<view wx:else>
+		<view wx:for="{{commtent}}" wx:key="list" class="cu-list menu-avatar solids-top">
+			<view class="item">
+				<view class="cu-avatar round" style="background-image:url({{item.image}});"></view>
+				<view class="commtent">
+					<view class="commtent-top">
+						<view class="u-name">{{item.name}}</view>
+						<view class="text-gray u-time">{{item.addtime}}</view>
+					</view>
+					  <view class="commtent-content">{{item.text}}</view>
+				</view>
+			  </view>
+		</view>
+		<view  class="cu-list menu-avatar solids-top" style="margin-bottom:70rpx; height:200rpx;text-align: center;">
+			<view class="item" >
+				<view class="commtent">
+				  <view class="commtent-content">已显示全部评论</view>
+				</view>
+			  </view>
+		</view>
+	</view>
+</block>
+<!--评论区 end-->
+<!--底部交互区-->
+<view class="comment-item">
+	<view class="mutual {{show? 'none' :'block'}}" >
+		<view class="publish fl" bindtap='clickShow'>
+			<view class="publish-inside cuIcon-writefill lg text-gray">写评论...</view>
+		</view>
+		<view class="fr" style="width: 63%">
+			<button class="given"  bindtap='favor' open-type='getUserInfo'><view class="{{favorStatus ? 'cuIcon-favorfill text-red' : 'cuIcon-favor text-gray'}} lg"></view></button>
+			<button class="forward-f" style="width: 39%" open-type="share"><image src="../../img/weixin.png" ></image><view style="float:right">分享好友</view></button>
+			<button class="forward-l" style="width: 43%" bindtap="shareQuan"><image src="../../img/pengyouquan.jpg"></image><view style="float:right">分享朋友圈</view></button>  
+		</view>
+	</view>
+	<view class="comment-form {{show ? 'block' : 'none'}} ">
+		<form bindsubmit="bindFormSubmit">
+			<view style="background-color:#f5f5f5">
+				<view class="slide fl">写点什么吧</view>
+				<view class="slide fr" style="color:#0081ff" bindtap='clickNone'>取消</view>
+			</view>
+			<view class="section">
+				<textarea  name='textarea' />
+			</view>
+			<view class="padding flex flex-direction">
+				<button  open-type='getUserInfo' bindgetuserinfo="onGotUserInfo" form-type='submit' class="cu-btn bg-red margin-tb-sm lg"> 评论 </button>
+			</view>
+		</form>
+	</view>
+</view>
+<view class="fadeIn" wx:if="{{dialog}}">
+	<view class="weui-mask"></view>
+	<view class="weui-dialog">
+		<view class="weui-dialog__bd">请点击右上角的“...”分享到朋友圈</view>
+		<view class="weui-dialog__ft">
+			<a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="dialogClose">知道了</a>
+		</view>
+	</view>
+</view>
+<!--底部交互区 end-->
+</block>
+
+
+
+

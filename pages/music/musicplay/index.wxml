@@ -1,0 +1,35 @@
+<!-- 审核 -->
+<view wx:if="{{sh==-1}}" class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="round">
+梅城镇地处益阳市安化县东南部，东抵清塘镇，南与新化毗连，西接乐安镇，北界仙溪镇，总面积279平方公里，设5个管区，下辖4个居民委员会和81个自然村。总人口7.8万人，地理座标为北纬28度08分，东经111度38分，平均海拔约185米，日平均气温16摄氏度，属亚热带季风气候，四季分明，雨量充沛，年降雨量1400余毫米。镇境群山簇拥，属芙蓉山系，呈南北走向，又有咿水及其支流漳溪与梅溪穿过，山环水绕，风光旖旎。境内“梅山十景”、“梅城八景”等，前人有过刻意的描述。
+  </view>
+</view>
+
+<!-- 正式环境 -->
+<block wx:if="{{sh==1}}">
+	<audio src="{{src}}" action="{{action}}" bindtimeupdate="timeupdateEvent" bindended="nextEvent"></audio>
+	<image class="play-bg" mode="aspectFill" src="../../../img/musicbg.jpg" ></image>
+	<image wx:if="{{lyricHidden}}" bindtap="switchbgEvent" class="trun-bg"  src="{{picurl}}" style="transform: translateX(-50%) rotate({{deg}}deg);"></image>
+	<view wx:if="{{!lyricHidden}}" id="container" class="play-container" animation="{{animationData}}" bindtap="switchbgEvent">
+		<view wx:for="{{lyricList}}"  wx:key="this" class="lyric {{item.time <= currentTime && item.endtime > currentTime ? 'selected' : ''}}">
+			<!-- <text wx:if="{{item.en}}">{{item.en}}</text> -->
+			<text wx:if="{{item.zh}}">{{item.zh}}</text>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="progress">
+			<text>{{timeText}}</text>
+			<progress percent="{{per}}" color="red" stroke-width="4"/>
+			<text>{{durationText}}</text>
+		</view>
+	  	<view class="controls">
+	  		<image class="mode" mode="scaleToFill" bindtap="switchModeEvent" src="../../../img/{{mode}}.png" />
+	  		<image mode="scaleToFill" bindtap="prevEvent" src="../../../img/prev.png" />
+	  		<image mode="scaleToFill" bindtap="actionEvent" src="../../../img/{{status === 'play' ? 'pause' : 'play'}}.png" />
+	  		<image mode="scaleToFill" bindtap="nextEvent" src="../../../img/next.png" />
+	  		<image class="fav" mode="scaleToFill" bindtap="switchbgEvent" src="../../../img/{{geci}}.png" />
+	  	</view>
+	  	<toast hidden="{{toastHidden}}" duration="2000" bindchange="toastChange">{{toastMsg}}</toast>
+	</view>
+</block>
+

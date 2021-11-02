@@ -1,0 +1,122 @@
+page {
+font-family: 'Microsoft YaHei', sans-serif, -apple-system-font, 'Helvetica Neue', Helvetica;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+.news {
+	padding-top: 20rpx;
+}
+.conent{
+	margin-top:200rpx;
+}
+.newitem {
+	display: flex;
+	border-bottom: 1rpx solid #f4f4f4;
+	/* padding: 30rpx; */
+	margin:25rpx 0 0 20rpx;
+	cursor: pointer;
+	position: relative;
+}
+.newitem .poster {
+	width: 200rpx;
+	height: 140rpx;
+	margin-right: 30rpx;
+}
+.meta {
+	flex: 1;
+	height: 140rpx;
+	width:470rpx;
+
+}
+.text-xs{
+	position:absolute;
+	left:225rpx;
+  	right:20rpx;
+	bottom:0
+}
+
+
+.tips {
+	font-size: 32rpx;
+	text-align: center;
+	color: #ccc;
+}
+.tips text {
+	vertical-align: middle;
+}
+.toTop {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 40rpx;
+	position: fixed;
+	right: 40rpx;
+	bottom: 180rpx;
+	background-color: #000;
+	opacity: .6;
+	font-size: 60rpx;
+	text-align: center;
+	color: #f4f4f4;
+	z-index: 1001;
+}
+.toTop::after {
+	content: '∧';
+	display: inline-block;
+}
+.top{
+	display:block;
+	border-bottom:#eee solid 1px;
+	top:54px;
+}
+
+.ggwx-newsTab .ggwx-newsTabBlock {
+	display: flex;
+	align-self: center;
+	padding: 22rpx;
+	font-size: 30rpx;
+	color: #444;
+}
+
+.ggwx-newsTabSelected {
+	color: #ff5252 !important;
+	border-bottom: 2px solid #ff5252;
+}
+
+.cu-item {
+  width:55%;
+  float:right;
+}
+.item-comment{
+  float:left;
+  width:33%;
+}
+.item-attentionfavor{
+  float:right;
+  margin-right:3rpx;
+}
+.cuIcon{
+  margin-right:20rpx;
+}
+
+.cuIcon-comment:before {
+  font-size:14px;
+}
+
+.cuIcon-favor:before {
+  font-size:14px;
+}
+
+.cuIcon-attentionfavor:before {
+
+  font-size:14px;
+}
+/* 搜索框 */
+.page__bd {
+	position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+

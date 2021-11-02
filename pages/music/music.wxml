@@ -1,0 +1,72 @@
+<!--pages/music/music.wxml-->
+<!-- 审核 -->
+<view wx:if="{{sh==-1}}" class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="round">
+梅城镇地处益阳市安化县东南部，东抵清塘镇，南与新化毗连，西接乐安镇，北界仙溪镇，总面积279平方公里，设5个管区，下辖4个居民委员会和81个自然村。总人口7.8万人，地理座标为北纬28度08分，东经111度38分，平均海拔约185米，日平均气温16摄氏度，属亚热带季风气候，四季分明，雨量充沛，年降雨量1400余毫米。镇境群山簇拥，属芙蓉山系，呈南北走向，又有咿水及其支流漳溪与梅溪穿过，山环水绕，风光旖旎。境内“梅山十景”、“梅城八景”等，前人有过刻意的描述。
+  </view>
+</view>
+
+<!-- 正式环境 -->
+<block wx:if="{{sh==1}}">
+	<loading hidden="{{!loading}}">加载中...</loading>
+	<view class="top">
+		<view class='ggwx-newsTab'>
+			<view class="ggwx-newsTabBlock {{state == 'music'?'ggwx-newsTabSelected':''}}" bindtap='clickmusic'>
+				<view class='ggwx-newsTabText'>音乐</view>
+			</view>	
+
+			<view class="ggwx-newsTabBlock {{state == 'video'?'ggwx-newsTabSelected':''}}" bindtap='clickvideo'>
+				<view  class='ggwx-newsTabText'>视频</view>
+			</view>
+		</view>
+	</view>	
+
+	<!--音频列表-->
+	<view scroll-y="true" class="container" wx:if="{{state =='music'}}">
+		<block wx:for="{{newslist}}" wx:key="this">
+			<navigator  class="listWrap" url="/pages/music/musicplay/index?id={{item.id}}&sid={{item.sid}}&sh={{sh}}">
+				<view class="block" >
+					<view class="left">
+						<image wx:if="{{item.thumb}}" src="{{item.thumb}}" mode="aspectFill"/>
+					</view>
+					<view class="right">
+						<view class="content">
+							<view>
+								<text class="text-lg">{{item.title}}</text>	
+							</view>
+							<view>
+								<text class="text-xs">{{item.addtime}}</text>
+							</view>
+						</view>
+						<view  class="play">
+							<image src="../../img/more.png" mode="scaleToFill"/>
+						</view>
+					</view>
+				</view>	
+			</navigator>
+		</block>
+	</view>	
+
+	<!--视频列表-->
+	<view scroll-y="true" class="video-wrap" wx:if="{{state =='video'}}">
+		<block wx:for="{{newslist}}" wx:key="this">
+			<navigator class="video-item" url="/pages/music/musicVideo/index?id={{item.id}}">
+				<view class="video-img">
+					<image wx:if="{{item.thumb}}" src="{{item.thumb}}" class="video-img-image"></image>
+				</view>
+				<view class="text-center padding">{{item.title}}</view>
+			</navigator>
+		</block>
+	</view>	
+
+	<!-- 加载更多部分 -->
+	<view class="tips">
+		<view class="bg-red light" wx:if="{{err == 1}}">
+			<text>更多作品敬请期待</text>
+		</view>
+	</view>
+</block>
+
+
+
+

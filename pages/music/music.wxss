@@ -1,0 +1,114 @@
+/* pages/music/music.wxss */
+page {
+  font-family: 'Microsoft YaHei', sans-serif, -apple-system-font, 'Helvetica Neue', Helvetica;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.ggwx-newsTabText{
+  width:100%;
+}
+.ggwx-newsTabSelected {
+  color: #ff5252 !important;
+  border-bottom: 2px solid #ff5252;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding: 10rpx;
+  margin-top:85rpx;
+}
+.block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 150rpx;
+  margin-bottom: 10rpx; 
+}
+.left {
+  width: 20%;
+  height: 100%;
+  padding: 5rpx;
+  box-sizing: border-box;
+  /* margin-right:30rpx; */
+}
+
+.left image {
+  width: 100%;
+  height: 100%;
+
+}
+
+.right {
+  flex: 1;
+  height: 100%;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  display: flex;
+}
+.content {
+  padding: 10rpx;
+  height: 100%;
+  width: 85%;
+  box-sizing: border-box;
+}
+
+.content view {
+  width: 100%;
+  margin-bottom: 45rpx;
+
+}
+.text-xs {
+  color: #999;
+}
+.play {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+    align-items: center;
+}
+
+.play image {
+  width: 28px;
+  height: 28px;
+}
+.tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+.tips text {
+  vertical-align: middle;
+}
+
+/**视频列表**/
+.video-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rpx;
+  justify-content: space-between;
+  margin-top:100rpx;
+}
+.video-item {
+  width: 48%;
+  margin-bottom: 20rpx;
+}
+
+.video-img {
+  position: relative;
+}
+.video-img-image {
+  width: 100%;
+  border-radius: 16rpx;
+  height:92px;
+}
+

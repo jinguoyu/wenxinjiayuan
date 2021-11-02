@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/music/music",
+    "pages/articleTxt/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "温馨家园网",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#bb2c08",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "今日生活",
+        "iconPath": "img/newsD.png",
+        "selectedIconPath": "img/newsS.png"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "text": "金自力作品",
+        "iconPath": "img/musicD.png",
+        "selectedIconPath": "img/musicS.png"
+      }
+      
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
